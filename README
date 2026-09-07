@@ -1,7 +1,99 @@
-echo "# MovieWeb" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin git@github.com:BabyPetch/MovieWeb.git
-git push -u origin main
+# MovieWeb
+
+เว็บไซต์รวบรวมข้อมูลภาพยนตร์ ซีรีส์ รางวัลภาพยนตร์ และข้อมูลนักแสดง พัฒนาโดยใช้ HTML, CSS และ Bootstrap 5
+
+## เกี่ยวกับโปรเจกต์
+
+โปรเจกต์นี้เป็นเว็บไซต์แนะนำภาพยนตร์และซีรีส์ในสไตล์แพลตฟอร์มสตรีมมิง ผู้ใช้สามารถเข้าดูข้อมูลภาพยนตร์ทั้งในโรงและตามแพลตฟอร์มสตรีมมิงต่าง ๆ ดูข้อมูลรางวัลภาพยนตร์ ดูประวัตินักแสดง และรีวิวจากผู้ใช้อื่นได้
+
+จัดทำโดยนักศึกษาคณะวิทยาการคอมพิวเตอร์ มหาวิทยาลัยขอนแก่น
+
+## หน้าเว็บทั้งหมด
+
+**index.html** — หน้าแรก มีสไลด์โชว์ภาพยนตร์แนะนำและรายการภาพยนตร์แนะนำ
+
+**theater.html** — รายชื่อภาพยนตร์ที่กำลังฉายในโรง พร้อมเรื่องย่อและคะแนนรีวิว
+
+**netflix.html, disney.html, hbo.html** — รายชื่อซีรีส์/ภาพยนตร์แยกตามแพลตฟอร์ม (Netflix, Disney+, HBO GO)
+
+**oppenheimer.html** — ตัวอย่างหน้ารายละเอียดภาพยนตร์ มีวิดีโอตัวอย่างและเรื่องย่อ เชื่อมโยงไปหน้ารีวิว
+
+**reiewpage.html** — หน้ารวมรีวิวจากผู้ใช้
+
+**celeb.html** — รายชื่อนักแสดง แสดงเป็นการ์ดรูปภาพ
+
+**biographyrbjr.html** — ตัวอย่างหน้าประวัตินักแสดง (Robert Downey Jr.)
+
+**oscar.html, goldengloble.html** — ผลรางวัลออสการ์และลูกโลกทองคำ แยกตามสาขา พร้อมระบุผู้ชนะ
+
+**landding-Login.html, login.html, signup.html** — หน้าสำหรับเข้าสู่ระบบและสมัครสมาชิก
+
+**support.html** — ข้อมูลผู้จัดทำโปรเจกต์
+
+## เมนูนำทาง
+
+ทุกหน้าใช้ navbar เดียวกัน ประกอบด้วย
+
+- หน้าแรก
+- หนัง (มีเมนูย่อย: โรงหนัง, ดูที่บ้าน — Netflix, Disney+, HBO GO)
+- ดารา
+- รางวัล (มีเมนูย่อย: Oscar, Golden Globe)
+- ทีมงาน
+- ปุ่มโปรไฟล์/เข้าสู่ระบบ
+
+## เทคโนโลยีที่ใช้
+
+- HTML5, CSS3
+- Bootstrap 5.3.2 (navbar, dropdown, grid)
+- Font Awesome 4.7
+- JavaScript (สไลด์โชว์หน้าแรก)
+- ฟอนต์ Noto Sans Thai ผ่าน @font-face
+
+## โครงสร้างไฟล์
+
+```
+MovieWeb/
+├── index.html
+├── theater.html
+├── netflix.html
+├── disney.html
+├── hbo.html
+├── oppenheimer.html
+├── reiewpage.html
+├── celeb.html
+├── biographyrbjr.html
+├── oscar.html
+├── goldengloble.html
+├── support.html
+├── landding-Login.html
+├── login.html
+├── signup.html
+└── css/
+    ├── home.css
+    ├── theater.css
+    ├── movie.css
+    ├── celeb.css
+    ├── awards.css
+    ├── review.css
+    ├── support.css
+    └── Login.css
+```
+
+## วิธีติดตั้งและรัน
+
+1. Clone repository
+
+```
+git clone git@github.com:BabyPetch/MovieWeb.git
+```
+
+2. เปิดโปรเจกต์ด้วย Visual Studio Code แล้วรันผ่าน extension Live Server (มีระบุไว้ใน .vscode/extensions.json แล้ว)
+
+3. เปิดไฟล์ index.html เป็นหน้าเริ่มต้น
+
+## สิ่งที่ยังไม่ได้ทำ / จุดที่ควรพัฒนาต่อ
+
+- ฟอร์ม login และ signup ยังไม่เชื่อมต่อกับฐานข้อมูลหรือ backend จริง เป็นเพียง static form
+- ช่องค้นหาในหน้าแรกยังใช้งานไม่ได้จริง
+- ไฟล์ CSS ของแต่ละหน้ามีโค้ดส่วน navbar/dropdown ที่ซ้ำกันทุกไฟล์ ควรแยกเป็นไฟล์กลางร่วมกัน
+- ข้อมูลรีวิวและรายชื่อภาพยนตร์เป็นข้อมูลคงที่ (hardcode) ยังไม่ได้ดึงจากฐานข้อมูล
